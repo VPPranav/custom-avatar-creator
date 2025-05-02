@@ -4,7 +4,7 @@ Here's your finalized and professional `README.md` and `requirements.txt` for th
 
 ### ✅ `README.md`
 
-````markdown
+
 # 🎨 Custom Avatar Creator
 
 A futuristic React application that allows users to create and customize their own avatars with various options like face shape, skin tone, hair style, eyes, clothes, and more. The application features a stunning 3D Spline background that creates an immersive experience.
