@@ -1,0 +1,62 @@
+.avatar-preview-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.avatar-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 30, 48, 0.7) 0%, rgba(10, 15, 25, 0.7) 100%);
+  padding: 10px;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.2), inset 0 0 20px rgba(0, 240, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-preview::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, rgba(0, 240, 255, 0.1), transparent 30%);
+  animation: rotate 8s linear infinite;
+  pointer-events: none; /* Ensure this doesn't interfere with SVG capture */
+  z-index: 1;
+}
+
+.avatar-preview::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 30, 48, 0.9) 0%, rgba(10, 15, 25, 0.9) 100%);
+  z-index: -1;
+  pointer-events: none; /* Ensure this doesn't interfere with SVG capture */
+}
+
+/* Make sure the SVG is above the pseudo-elements */
+.avatar-preview svg {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.avatar-preview:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.3), inset 0 0 25px rgba(0, 240, 255, 0.15);
+}

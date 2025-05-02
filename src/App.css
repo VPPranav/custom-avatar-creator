@@ -1,38 +1,216 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Base styles */
+.app {
+  position: relative;
+  width: 100%;
   min-height: 100vh;
+  font-family: "Orbitron", "Rajdhani", sans-serif;
+  color: #e0f7ff;
+  overflow-x: hidden;
+}
+
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+@media (min-width: 992px) {
+  main {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+/* Section titles */
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(90deg, #00f0ff, #00ff8f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Avatar section */
+.avatar-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.avatar-card {
+  background: rgba(10, 15, 30, 0.6);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.15), inset 0 0 15px rgba(0, 240, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.avatar-card:hover {
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.25), inset 0 0 20px rgba(0, 240, 255, 0.1);
+}
+
+/* Controls section */
+.controls-section {
+  flex: 1;
+}
+
+.controls-container {
+  background: rgba(10, 15, 30, 0.6);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.15), inset 0 0 15px rgba(0, 240, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  height: 100%;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.glow-button {
+  background: rgba(0, 20, 40, 0.7);
+  color: #e0f7ff;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 8px;
+  min-width: 160px;
 }
 
-.App-link {
-  color: #61dafb;
+.glow-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.glow-button:hover {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+  border-color: rgba(0, 240, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.glow-button:hover::before {
+  transform: translateX(100%);
+}
+
+.button-icon {
+  font-size: 1.2rem;
+}
+
+.save-button {
+  border-color: rgba(0, 255, 170, 0.3);
+}
+
+.save-button:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.4);
+  border-color: rgba(0, 255, 170, 0.6);
+}
+
+.export-button {
+  border-color: rgba(0, 170, 255, 0.3);
+}
+
+.export-button:hover {
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+  border-color: rgba(0, 170, 255, 0.6);
+}
+
+.reset-button {
+  border-color: rgba(255, 100, 100, 0.3);
+}
+
+.reset-button:hover {
+  box-shadow: 0 0 15px rgba(255, 100, 100, 0.4);
+  border-color: rgba(255, 100, 100, 0.6);
+}
+
+.glow-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.glow-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 255, 170, 0.2);
+  border: 1px solid rgba(0, 255, 170, 0.4);
+  color: #e0f7ff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
+  transition: bottom 0.3s ease;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.notification.show {
+  bottom: 30px;
 }
