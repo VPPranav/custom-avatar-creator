@@ -158,57 +158,70 @@ This project is licensed under the [MIT License](LICENSE).
 * [Spline](https://spline.design)
 * The open-source community 🌍
 
-````
 
----
+## 🙏 Acknowledgements
 
-### ✅ `requirements.txt`
+- [avataaars](https://github.com/fangpenlin/avataaars) for the avatar generation library
+- [Spline](https://spline.design/) for the 3D design tool
+- All the open-source libraries that made this project possible
+plaintext
 
-While this is a JavaScript/Node project, here’s a clear documentation-style `requirements.txt` for reference or publishing purposes:
+## requirements.txt
 
-```plaintext
-# Custom Avatar Creator - Requirements
+# Node.js dependencies (install using npm install)
 
-# 🛠 Core Dependencies
-react@18.2.0
-react-dom@18.2.0
-react-scripts@5.0.1
+# Core Dependencies
 
-# 🎨 Avatar Generation
-avataaars@2.0.0
+react@18.2.0                  # React library for building user interfaces
+react-dom@18.2.0              # React DOM-specific methods
+react-scripts@5.0.1           # Scripts and configuration used by Create React App
 
-# 💾 File Operations
-file-saver@2.0.5
+# Avatar Generation
 
-# 🌌 3D Background
-@splinetool/react-spline@2.2.6
-@splinetool/runtime@0.9.493
+avataaars@2.0.0               # Library for generating customizable avatars
 
-# 📊 Performance Monitoring
-web-vitals@2.1.4
+# File Operations
 
-# 🧪 Development & Testing
-@testing-library/jest-dom@5.17.0
-@testing-library/react@13.4.0
-@testing-library/user-event@13.5.0
+file-saver@2.0.5              # Library to save files on the client-side
 
-# 💻 System Requirements
-Node.js >= 14.0.0
-npm >= 6.14.0
+# 3D Background
 
-# 🌐 Browser Requirements
-- Modern ES6-compatible browser
-- WebGL support
-- localStorage support
-- Canvas API support
+@splinetool/react-spline@2.2.6 # React component for Spline 3D scenes
+@splinetool/runtime@0.9.493    # Runtime for Spline 3D scenes
 
-# 💽 Hardware Recommendations
-- 4GB+ RAM (8GB recommended)
-- Modern GPU with WebGL
-- Multi-core CPU
-````
+# Performance Monitoring
 
----
+web-vitals@2.1.4              # Library for measuring web vitals metrics
+
+# Development Dependencies
+
+@testing-library/jest-dom@5.17.0     # Custom jest matchers for testing DOM elements
+@testing-library/react@13.4.0        # Testing utilities for React
+@testing-library/user-event@13.5.0   # Simulate user events for testing
+
+# System Requirements
+
+Node.js >= 14.0.0             # JavaScript runtime
+npm >= 6.14.0                 # Package manager for Node.js
+Modern web browser with WebGL support (Chrome, Firefox, Safari, Edge)
+Graphics card with WebGL support for 3D background
+
+# Browser Requirements
+
+- Modern browser with ES6 support
+- WebGL support for 3D background
+- localStorage support for saving avatar configurations
+- Canvas API support for exporting avatars
+
+
+# Hardware Recommendations
+
+- 4GB RAM minimum (8GB recommended)
+- Modern GPU for smooth 3D background rendering
+- Multi-core CPU recommended for better performance
+plaintext
+
+These updated documentation files provide comprehensive information about your project, including detailed installation instructions, feature descriptions, and technical requirements. The README.md is formatted with clear sections and emojis for better readability, while the requirements.txt file includes detailed information about each dependency and system requirement.
 
 Let me know if you want me to generate a `LICENSE` file or set up this repo for GitHub Pages or Vercel deployment.
 
