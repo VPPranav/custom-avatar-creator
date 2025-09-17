@@ -214,10 +214,5 @@ plaintext
 
 These updated documentation files provide comprehensive information about your project, including detailed installation instructions, feature descriptions, and technical requirements. The README.md is formatted with clear sections and emojis for better readability, while the requirements.txt file includes detailed information about each dependency and system requirement.
 
-Let me know if you want me to generate a `LICENSE` file or set up this repo for GitHub Pages or Vercel deployment.
-
-## 📄 License
-
-MIT
 
 ---
